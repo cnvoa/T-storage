@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="module">
+    import storage from "./index.js";
+
+    // // Most used LocalStorage
+    let dog1 = storage.data('dog', {
+      key: 'dog1',
+      value: 'Tom'
+    })
+    console.log(dog1);
+    console.log(storage.data('dog'));
+    console.log('🐶');
+
+    let dog2 = storage.data('dog', {
+      key: 'dog2',
+      value: {
+        name: 'Charlie',
+        age: 'tow'
+      }
+    })
+    console.log(dog2);
+    console.log(storage.data('dog'));
+    console.log('🐶');
+
+    // // Time-Limited Storage: Time in Seconds
+    // // Don't milliseconds
+    let cat1 = storage.data('cat', {
+      key: 'cat1',
+      value: {
+        name: 'Cleo',
+        age: 'one'
+      },
+      time: 5 * 60 * 60, // 5 hours
+      // time: '2020/3/7 8' // Future time YES
+      // time: '2020/3/7 8:59' // Future time YES
+      // time: '22020/3/7 08:23:23:14:58' // Malformed
+      // ...
+    })
+    console.log(cat1);
+    console.log(storage.data('cat'));
+    console.log('🐱');
+
+    // // Time-limited storage: in date format
+    // // YES 👌
+    // '2020/3/7'
+    // '2020/3/7 8'
+    // '2020/3/7 08'
+    // '2020/3/7 8:59'
+    // '2020/3/7 08:'
+    // '2020/3/7 8:1'
+    // '2020/3/7 08:1'
+    // '2020/3/7 8:01'
+    // '2020/3/7 08:01'
+    // '2020/3/7  04:01'
+    // '2020/3/7   01:01'
+    // '2020/3/7         01:01'
+    
+    // Year month day can also be connected using '-'
+    // '2020-03-10'
+
+    // // NO 👊
+    // // '2020/3/7 08:23:23:14:58' Store failed
+    let cat2 = storage.data('cat', {
+      key: 'cat2',
+      value: {
+        name: 'Candy',
+        sex: 'man'
+      },
+      time: '2020-08-2 2'
+    })
+    console.log(cat2);
+    console.log(storage.data('cat'));
+    console.log('🐱');
+
+    // // sessionStorage has no time option
+    // // Because it is only valid at the current time
+    // // It has no effect with time
+    let Koala1 = storage.session.data('Koala', {
+      key: 'Koala1',
+      value: {
+        name: 'Luna',
+        sex: 'woman'
+      },
+      // time: '1583492400'
+    })
+    console.log(Koala1);
+    console.log(storage.session.data('Koala'));
+    console.log('🐨');
+
+    // // has 
+    let dog3 = storage.has('dog', 'dog2')
+    console.log(dog3); // {xxxx}
+    console.log('🐶');
+
+    let dog4 = storage.has('dog', 'dog3')
+    console.log(dog4); // undefined
+    console.log('🐶');
+
+    let dog5 = storage.has('tiger')
+    console.log(dog5); // undefined
+    console.log('🦁');
+
+    // // Get all key-value in storage
+    let ant = storage.forEach(function (key, data) {
+      console.log(key);
+      console.log(data);
+    })
+    console.log(ant); // undefined  Because it returns nothing
+    console.log('🐜');
+
+    // // Use with caution!
+    // // Clear storage space
+    // let bug = storage.clear()
+    // console.log(bug); // undefined  Because it returns nothing
+    // console.log('🐛');
+
+    // // Avoid this
+    // // There will be empty objects
+    // let empty = storage.data('empty', {})
+    // console.log(empty);
+    // console.log(storage.data('empty'));
+    // console.log('😣');
+  </script>
+</body>
+
+</html>

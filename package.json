@@ -1,0 +1,34 @@
+{
+  "name": "t-storage",
+  "version": "1.0.0",
+  "description": "Wrap html5 storage API: localStorage sessionStorage, and they use the same API",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp server",
+    "dev": "gulp server",
+    "build": "node build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zhuo-xiang/T-storage.git"
+  },
+  "author": "mentals@foxmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhuo-xiang/T-storage/issues"
+  },
+  "homepage": "https://github.com/zhuo-xiang/T-storage#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-object-assign": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "mocha": "^7.1.0",
+    "rollup": "^1.31.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-eslint": "^7.0.0",
+    "uglify-js": "^3.8.0"
+  }
+}
