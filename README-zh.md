@@ -1,6 +1,6 @@
 # T-storage
 
-README **[English doc](README.md)** | **[中文 doc](README.zh.md)**
+README **[English doc](README.md)** | **[中文 doc](README-zh.md)**
 
 <p align="center">
 <img alt="T-storage" src="build/t-storage.png" width="50%" height="50%">
