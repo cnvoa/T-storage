@@ -2,7 +2,16 @@
   "name": "t-storage",
   "version": "1.0.0",
   "description": "Wrap html5 storage API: localStorage sessionStorage, and they use the same API",
-  "main": "index.js",
+  "keywords": [
+    "storage",
+    "store",
+    "cache",
+    "html5",
+    "localStorage",
+    "sessionStorage"
+  ],
+  "module": "dist/tstorage.esm.js",
+  "main": "dist/tstorage.min.js",
   "scripts": {
     "test": "gulp server",
     "dev": "gulp server",
@@ -31,4 +40,4 @@
     "rollup-plugin-eslint": "^7.0.0",
     "uglify-js": "^3.8.0"
   }
-}
+}2
