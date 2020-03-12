@@ -27,7 +27,7 @@ It borrows the idea of a database and stores the data you need to store accordin
 
 **Introduced through script tags**
 ```
-npm install Tstorage -S
+https://cdn.jsdelivr.net/npm/t-storage/dist/tstorage.min.js
 ```
 
 ```javascript
@@ -36,11 +36,11 @@ var storage = window.Tstorage;
 
 **Introduced through npm**
 ```
-npm install Tstorage -S
+npm install t-storage -S
 ```
 
 ```javascript
-import storage from 'T-storage'
+import storage from 't-storage'
 ```
 
 ## Usage

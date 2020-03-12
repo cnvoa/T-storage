@@ -24,7 +24,7 @@ T-storage 是基于现代浏览器, 对LocalStorage和SessionStorage进行封装
 
 **通过script标签方式引入**
 ```
-npm install Tstorage -S
+https://cdn.jsdelivr.net/npm/t-storage/dist/tstorage.min.js
 ```
 
 ```javascript
@@ -33,11 +33,11 @@ var storage = window.Tstorage;
 
 **通过npm方式引入**
 ```
-npm install Tstorage -S
+npm install t-storage -S
 ```
 
 ```javascript
-import storage from 'T-storage'
+import storage from 't-storage'
 ```
 
 ## Usage
