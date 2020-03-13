@@ -1,6 +1,6 @@
 /**
  * Tstorage v1.0.0
- * (c) 2020-3-11 mentals@foxmail.com
+ * (c) 2020-3-13 mentals@foxmail.com
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -69,17 +69,33 @@
               type = _filterTime.type,
               value = _filterTime.value;
 
-          if (type == 'second') {
-            time = new Date().getTime() + value * 1000;
+          switch (type) {
+            case 'second':
+              time = new Date().getTime() + value * 1000;
+              break;
+
+            case 'stamps':
+              time = value;
+              break;
+
+            default:
+              try {
+                console.warn('Store failed!');
+              } catch (error) {
+                console.log('Store failed!');
+              }
+
+              return;
           }
 
-          if (type == 'stamps') {
-            time = value;
-          }
+          if (time <= nowTime) {
+            try {
+              console.warn('Storage time can only be future time!');
+            } catch (error) {
+              console.log('Storage time can only be future time!');
+            }
 
-          if (type == 'nan') {
-            console.log('Store failed');
-            return false;
+            return;
           }
         }
 

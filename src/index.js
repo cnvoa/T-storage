@@ -40,18 +40,32 @@ let api = {
       let time = null;
 
       if ('time' in settings) {
-        const { type, value } = filterTime(settings.time)
-        if (type == 'second') {
-          time = (new Date().getTime()) + (value * 1000)
-        }
-        if (type == 'stamps') {
-          time = value
-        }
-        if (type == 'nan') {
-          console.log('Store failed');
-          return false
-        }
-      }
+				const { type, value } = filterTime(settings.time)
+				switch (type) {
+					case 'second':
+						time = (new Date().getTime()) + (value * 1000)
+						break;
+					case 'stamps':
+						time = value
+						break;
+					default:
+						try {
+							console.warn('Store failed!');
+						} catch (error) {
+							console.log('Store failed!');
+						}
+						return
+				}
+
+				if (time <= nowTime) {
+					try {
+						console.warn('Storage time can only be future time!');
+					} catch (error) {
+						console.log('Storage time can only be future time!');
+					}
+					return
+				}
+			}
 
       if (this.type != 'session' && time) {
         settings.value.limitTime = time + ''
