@@ -55,14 +55,14 @@ storage.session.data()
 ```
 
 ```javascript
-// // Most used LocalStorage
+// Most used LocalStorage
 let dog1 = storage.data('dog', {
   key: 'dog1',
   value: 'Tom'
 })
 console.log(dog1);
 console.log(storage.data('dog'));
-console.log('🐶')
+console.log('🐶');
 
 let dog2 = storage.data('dog', {
   key: 'dog2',
@@ -73,10 +73,22 @@ let dog2 = storage.data('dog', {
 })
 console.log(dog2);
 console.log(storage.data('dog'));
-console.log('🐶')
+console.log('🐶');
 
-// // Time-Limited Storage: Time in Seconds
-// // Don't milliseconds
+
+// The usage of sessionStorage is exactly the same as localStorage
+// But sessionStorage does not support the time option
+let Fish = storage.session.data('Fish', {
+  key: 'Fish1',
+  value: 'Gldli'
+})
+console.log(Fish);
+console.log(storage.session.data('Fish'));
+console.log('🐠');
+
+
+// Time-Limited Storage: Time in Seconds
+// Don't milliseconds
 let cat1 = storage.data('cat', {
   key: 'cat1',
   value: {
@@ -96,8 +108,8 @@ console.log('🐱');
 
 - localStorage uses storage.data (), sessionStorages uses storage.session.data ()
 - time parameter you can pass the number of seconds, representing the length of time you want to store, for example you want to store 1 hour, time should pass 1 * 60 * 60
-- You can also pass a date format to the time parameter, which means that this storage will be deleted on a certain date in the future. For the date format, see **[demo](demo/index.html)** 
-- More usage **[demo](demo/index.html)** 
+- You can also pass a date format to the time parameter, which means that this storage will be deleted on a certain date in the future. For the date format, see **[demo](demo/)** 
+- More usage **[demo](demo/)** 
 
 
 ## API List

@@ -64,12 +64,27 @@ describe('localStorage time limit storage test, time option is date', function (
 				name: 'Candy',
 				sex: 'man'
 			},
-			time: '2020-3-7 8'
+			time: '2099-3-7 8'
 		})
 
-		var mirrorCat = JSON.stringify({ name: 'Candy', sex: 'man', limitTime: '1583539200000' })
+		var mirrorCat = JSON.stringify({ name: 'Candy', sex: 'man', limitTime: '4076524800000' })
 		cat = JSON.stringify(cat)
 		cat.should.equal(mirrorCat)
+	})
+})
+
+describe('time option is past time, the storage is invalid', function () {
+	it('Return object: undefined', function () {
+		var octopus = Tstorage.data('octopus', {
+			key: 'octopus1',
+			value: {
+				name: 'pual',
+				sex: 'man'
+			},
+			time: '2020-3-7 8'
+		})
+		octopus = String(octopus)
+		octopus.should.equal('undefined')
 	})
 })
 

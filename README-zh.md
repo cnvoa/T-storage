@@ -51,14 +51,14 @@ storage.session.data()
 ```
 
 ```javascript
-// // Most used LocalStorage
+// Most used LocalStorage
 let dog1 = storage.data('dog', {
   key: 'dog1',
   value: 'Tom'
 })
 console.log(dog1);
 console.log(storage.data('dog'));
-console.log('🐶')
+console.log('🐶');
 
 let dog2 = storage.data('dog', {
   key: 'dog2',
@@ -69,10 +69,22 @@ let dog2 = storage.data('dog', {
 })
 console.log(dog2);
 console.log(storage.data('dog'));
-console.log('🐶')
+console.log('🐶');
 
-// // Time-Limited Storage: Time in Seconds
-// // Don't milliseconds
+
+// The usage of sessionStorage is exactly the same as localStorage
+// But sessionStorage does not support the time option
+let Fish = storage.session.data('Fish', {
+  key: 'Fish1',
+  value: 'Gldli'
+})
+console.log(Fish);
+console.log(storage.session.data('Fish'));
+console.log('🐠');
+
+
+// Time-Limited Storage: Time in Seconds
+// Don't milliseconds
 let cat1 = storage.data('cat', {
   key: 'cat1',
   value: {
@@ -92,8 +104,8 @@ console.log('🐱');
 
 - localStorage 存储使用storage.data(), sessionStorages存储使用storage.session.data()
 - time参数您可以传递秒数,代表您要存储的时长,比如您要存储1小时,time应该传递 1 * 60 * 60
-- time参数您还可以传递日期格式,代表在未来某一个日期删除这个存储,日期格式请看 **[demo](demo/index.html)** 
-- 更多用法清前往 **[demo](demo/index.html)**
+- time参数您还可以传递日期格式,代表在未来某一个日期删除这个存储,日期格式请看 **[demo](demo/)** 
+- 更多用法清前往 **[demo](demo/)**
 
 
 ## API List

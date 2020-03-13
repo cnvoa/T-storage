@@ -1,5 +1,5 @@
 /**
- * Tstorage v1.0.0
+ * Tstorage v1.1.0
  * (c) 2020-3-13 mentals@foxmail.com
  */
 function _extends() {
