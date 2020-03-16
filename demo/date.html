@@ -20,12 +20,26 @@
         age: 'one'
       },
       time: 5 * 60 * 60, // 5 hours
-      // time: '2020/3/7 8' // Future time YES
+      // time: '2020/3/20 8' // Future time YES
       // time: '2020/3/7 8:59' // Future time YES
       // time: '22020/3/7 08:23:23:14:58' // Malformed
       // ...
     })
     console.log(cat1);
+    console.log(storage.data('cat'));
+    console.log('🐱');
+
+    // // Seconds can only be positive integers
+    let cat4 = storage.data('cat', {
+      key: 'cat4',
+      value: {
+        name: 'coco',
+        age: '4'
+      },
+      time: -5 * 60 // Store failed!
+      // time: 0  // Store failed!
+    })
+    console.log(cat4); // undefined
     console.log(storage.data('cat'));
     console.log('🐱');
 
@@ -49,6 +63,7 @@
 
     // NO 👊
     // '2020/3/7 08:23:23:14:58' Store failed
+
     let cat2 = storage.data('cat', {
       key: 'cat2',
       value: {
@@ -84,12 +99,11 @@
         name: 'Luna',
         sex: 'woman'
       },
-      time: '1583492400'
+      time: '2020-4-6 9'
     })
     console.log(Koala1);
     console.log(storage.session.data('Koala'));
     console.log('🐨');
-
   </script>
 </body>
 

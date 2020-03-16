@@ -134,7 +134,7 @@ _extends(store, api);
 _extends(store.session, api);
 
 function filterTime(time) {
-  if (time == '') {
+  if (time == '' || time <= 0) {
     return '';
   } // Timestamp
 

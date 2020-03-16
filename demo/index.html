@@ -44,23 +44,28 @@
 
 
     // has 
-    // Normally valuable
+    // dog2 field in dog table
     let dog3 = storage.has('dog', 'dog2')
     console.log(dog3); // {xxxx}
     console.log('🐶');
 
-    // No storage record
+    // no dog3 field in dog table
     let dog4 = storage.has('dog', 'dog3')
     console.log(dog4); // undefined
     console.log('🐶');
 
-    // No storage record
-    let dog5 = storage.has('tiger')
+    // The entire dog table
+    let dog5 = storage.has('dog')
     console.log(dog5); // undefined
+    console.log('🐶');
+
+    // No tiger table
+    let tiger = storage.has('tiger')
+    console.log(tiger); // undefined
     console.log('🦁');
 
 
-    // // Get all key-value in storage
+    // Get all key-value in storage
     let ant = storage.forEach(function (key, data) {
       console.log(key);
       console.log(data);

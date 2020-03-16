@@ -1,6 +1,6 @@
 /**
- * Tstorage v1.1.0
- * (c) 2020-3-13 mentals@foxmail.com
+ * Tstorage v1.1.2
+ * (c) 2020-3-16 mentals@foxmail.com
  */
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -154,7 +154,7 @@ _extends(store, api);
 _extends(store.session, api);
 
 function filterTime(time) {
-  if (time == '') {
+  if (time == '' || time <= 0) {
     return '';
   } // Timestamp
 

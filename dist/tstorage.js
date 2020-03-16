@@ -1,6 +1,6 @@
 /**
- * Tstorage v1.1.0
- * (c) 2020-3-13 mentals@foxmail.com
+ * Tstorage v1.1.2
+ * (c) 2020-3-16 mentals@foxmail.com
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -160,7 +160,7 @@
   _extends(store.session, api);
 
   function filterTime(time) {
-    if (time == '') {
+    if (time == '' || time <= 0) {
       return '';
     } // Timestamp
 

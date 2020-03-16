@@ -88,6 +88,23 @@ describe('time option is past time, the storage is invalid', function () {
 	})
 })
 
+describe('Seconds can only be positive integers', function () {
+	it('Return object: undefined', function () {
+		var octopus = Tstorage.data('octopus', {
+			key: 'octopus1',
+			value: {
+				name: 'pual',
+				sex: 'man'
+			},
+			// time: 0
+			time: -545454
+		})
+		console.log(octopus);
+		octopus = String(octopus)
+		octopus.should.equal('undefined')
+	})
+})
+
 
 describe('sessionStorage time limit storage test, session storage time limit it is invalid', function () {
 	it('Return object: {"name": "Luna","sex": "woman"}', function () {

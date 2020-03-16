@@ -128,7 +128,7 @@ Object.assign(store, api)
 Object.assign(store.session, api)
 
 function filterTime(time) {
-  if (time == '') {
+	if (time == '' || time <= 0) {
     return ''
   }
 

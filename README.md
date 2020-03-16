@@ -21,6 +21,7 @@ It borrows the idea of a database and stores the data you need to store accordin
 
 - Store data of the same type together to avoid naming conflicts and variable pollution.
 - There is a time limit on the data stored.
+- **[demo](demo/)**
 
 
 ## Install

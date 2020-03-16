@@ -18,6 +18,7 @@ T-storage 是基于现代浏览器, 对LocalStorage和SessionStorage进行封装
 
 - 将同样作用的数据存放在一起, 避免命名冲突和变量污染
 - 存储的数据有时间限制
+- **[demo](demo/)**
 
 
 ### Install
