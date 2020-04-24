@@ -1,6 +1,6 @@
 {
   "name": "t-storage",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Wrap html5 storage API: localStorage sessionStorage, and they use the same API",
   "keywords": [
     "storage",

@@ -5,7 +5,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 */
 var isWindow = !!window.localStorage;
 var store = {
-  verson: '1.0.0',
+  verson: '1.1.3',
   storage: isWindow ? window.localStorage : null,
   session: {
     storage: isWindow ? window.sessionStorage : null,
