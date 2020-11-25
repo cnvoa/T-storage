@@ -1,6 +1,6 @@
 {
   "name": "t-storage",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Wrap html5 storage API: localStorage sessionStorage, and they use the same API",
   "keywords": [
     "storage",
@@ -19,15 +19,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/zhuo-xiang/T-storage.git"
+    "url": "git+ssh://git@github.com/cnvoa/T-storage.git"
   },
   "author": "mentals@foxmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zhuo-xiang/T-storage/issues"
+    "url": "https://github.com/cnvoa/T-storage/issues"
   },
-  "homepage": "https://github.com/zhuo-xiang/T-storage#readme",
+  "homepage": "https://github.com/cnvoa/T-storage#readme",
   "devDependencies": {
+    "@babel/compat-data": "^7.12.7",
     "@babel/core": "^7.8.4",
     "@babel/plugin-transform-object-assign": "^7.8.3",
     "@babel/preset-env": "^7.8.4",

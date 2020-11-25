@@ -5,7 +5,7 @@
 const isWindow = !!window.localStorage
 
 let store = {
-  verson: '1.1.3',
+  verson: '1.1.4',
   storage: isWindow ? window.localStorage : null,
   session: {
     storage: isWindow ? window.sessionStorage : null,

@@ -1,6 +1,6 @@
 /**
- * Tstorage v1.1.3
- * (c) 2020-4-23 mentals@foxmail.com
+ * Tstorage v1.1.4
+ * (c) 2020/11/25 mentals@foxmail.com
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -31,7 +31,7 @@
   */
   var isWindow = !!window.localStorage;
   var store = {
-    verson: '1.1.3',
+    verson: '1.1.4',
     storage: isWindow ? window.localStorage : null,
     session: {
       storage: isWindow ? window.sessionStorage : null,
